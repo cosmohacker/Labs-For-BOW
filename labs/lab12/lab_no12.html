@@ -1,0 +1,37 @@
+<div class="container-fluid pt-4 px-4">
+    <div class="row vh-100 bg-secondary rounded align-items-center justify-content-center mx-0">
+        <div class="col-md-6 text-center">
+            <h3>Lab 12</h3>
+            <h4 style="color:red">!!!You need to view this Lab with Internet Explorer for ActiveXObject!!!</h3>
+
+            <form id="main_form">
+                <div id="main_div"></div>
+            </form>
+
+            <script>
+                //Number 6 
+                function pr_load() {
+                    var ADO = new ActiveXObject("ADODB.Connection");
+                    var res_str = "";
+                    ADO.Open("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\\Users\\yagiz\\Desktop\\database.MDB", "", "", 0);
+                    GR = ADO.Execute("SELECT * FROM computer");
+                    if (GR.BOF && GR.EOF) {
+                        WS.Popup("There are no records in the database.", 60, "Error", 0 + 48);
+                        window.close();
+                    }
+                    res_str += "<table border=\"1\"><tr><td>Computer_Id<\/td><td>Computer_UID<\/td><td>Name<\/td><td>Brand<\/td><td>Model<\/td><td>OS<\/td><td>IP<\/td><td>Proprietor<\/td><\/tr>";
+                do {
+                    res_str += "<tr><td>" + GR.Fields("Computer_Id").Value + "<\/td><td>" +
+                        GR.Fields("Computer_UID").Value + "<\/td><td> " + GR.Fields("Name").Value + "<\/td><td>" +
+                        GR.Fields("Brand").Value + "<\/td><td>" + GR.Fields("Model").Value + "<\/td><td>" +
+                        GR.Fields("OS").Value + "<\/td><td>" + GR.Fields("IP").Value + "<\/td><td>" +
+                        GR.Fields("Proprietor").Value + "<\/td><\/tr>"
+                    } while (GR.MoveNext(), !GR.EOF);
+                    main_div.innerHTML = res_str;
+                    ADO.Close();
+                }
+                pr_load();
+            </script>
+        </div>
+    </div>
+</div>

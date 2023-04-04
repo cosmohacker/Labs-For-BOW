@@ -1,0 +1,63 @@
+<div class="container-fluid pt-4 px-4">
+    <div class="row vh-100 bg-secondary rounded align-items-center justify-content-center mx-0">
+        <div class="col-md-6 text-center">
+            <h3>Lab 11</h3>
+            <form id="main_form">
+                <table>
+                    <tr>
+                        <td>Number of terms</td>
+                        <td> <input type="text" id="t_str" value="5"></td>
+                    </tr>
+                    <tr>
+                        <td> Number of columns</td>
+                        <td><input type="text" id="t_stb" value="5"></td>
+                    </tr>
+                    <tr>
+                        <td> <input type="button" onClick="fun();" value="Build matrix"><br>
+                        <td>
+                    </tr>
+                    <tr>
+                        <td> <input type="button" onClick="fun_build();" value="Calculate">
+                        <td>
+                    </tr>
+                </table>
+                <div id="main_div"></div>
+            </form>
+            <script>
+                var str, stb;
+                function fun() {
+                    str = parseInt(main_form.t_str.value);
+                    stb = parseInt(main_form.t_stb.value);
+                    var res_str = "<table>\n";
+                    for (var i = 1; i <= str; i++) {
+                        res_str += "<tr>\n";
+                        for (var j = 1; j <= stb; j++) {
+                            res_str += "<td>";
+                            res_str += "<input type = \"text\" id = \"_" + 2 * i + "_" + j + "\" value = \"" + 2 * i + ""
+                                + j + "\">";
+                            res_str += "<\/td>\n";
+                        }
+                        res_str += "<\/tr>\n";
+                    }
+                    res_str += "<\/table>";
+                    main_div.innerHTML = res_str;
+                }
+                function fun_build() {
+                    var res_str = "";
+                    var str_report = "";
+                    for (var i = 1; i <= str; i++)
+                    {
+                        var sum = 0;
+                        for (var j = 1; j <= stb; j++) {
+                            res_str = "sum += parseInt(main_form._" + 2 * i + "_" + j + ".value);";
+                            eval(res_str);
+                        }
+                        str_report += "Sum of " + 2 * i + " terms = " + sum + ";\n"
+                    }
+                    alert(str_report);
+                }
+            </script>
+
+        </div>
+    </div>
+</div>

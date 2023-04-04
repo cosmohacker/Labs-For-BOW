@@ -1,0 +1,22 @@
+   <div class="container-fluid pt-4 px-4">
+    <div class="row vh-100 bg-secondary rounded align-items-center justify-content-center mx-0">
+        <div class="col-md-6 text-center">
+            <h1>Student Information</h1>
+            <button type="button" class="btn btn-primary m-2" onclick="showBirthInfo()">SHOW</button>
+            <p id="birthInfo"></p>
+        
+            <script>
+                function showBirthInfo() {
+                    var dateOfBirth = "May 9, 2001";
+                    var placeOfBirth = "Istanbul, Türkiye";
+                    var name_surname="Yagizcan Yavuz"
+        
+                    var birthInfoParagraph = document.getElementById("birthInfo");
+                    var info ="Name & Surname: " + name_surname + "\nDate of Birth: " + dateOfBirth + "\nPlace of Birth: " + placeOfBirth;
+                    birthInfoParagraph.textContent = info;
+                    alert(info)
+                }
+            </script>
+        </div>
+    </div>
+</div>

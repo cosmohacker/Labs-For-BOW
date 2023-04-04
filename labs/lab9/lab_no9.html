@@ -1,0 +1,50 @@
+<div class="container-fluid pt-4 px-4">
+    <div class="row vh-100 bg-secondary rounded align-items-center justify-content-center mx-0">
+        <div class="col-md-6 text-center">
+            <h3>Lab 9</h3>
+
+            <div>
+                <label for="number-x">Enter X Number : </label>
+                <br>
+                <input type="number" id="number-x" value="" placeholder="Enter number for X" />
+                <hr>
+                <label for="number-y">Enter Y Number : </label>
+                <br>
+                <input type="number" id="number-y" value="" placeholder="Enter number for Y" />
+                <br>
+                <button type="button" id="btnCalc">Calculate</button>
+                <p style="color:red" id="results"></p>
+            </div>
+
+            <script>
+                // Number 15
+                var btnCalc = document.getElementById("btnCalc");
+                var results = document.getElementById("results");
+
+                btnCalc.addEventListener("click", function () {
+                    var x = document.getElementById("number-x").value;
+                    var y = document.getElementById("number-y").value;
+
+                    if (x === "" || y === "") {
+                        results.innerText = "Please fill both inputs to get the answer!";
+                    } else {
+                        x = parseFloat(x);
+                        y = parseFloat(y);
+                        if (x + y !== 0 && x * y !== 0) {
+                            results.innerText = "Result is not zero!";
+                            results.style.color = "green";
+                        }
+                        
+                        if (x > 100 && Math.pow(x, 3) > 100) {
+                            results.innerText = "Result is bigger than 100!";
+                            results.style.color = "green";
+                        } else {
+                            results.innerText = Math.pow(x, 3) + y;
+                            results.style.color = "green";
+                        }
+                    }
+                });
+            </script>
+        </div>
+    </div>
+</div>

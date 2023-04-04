@@ -1,0 +1,49 @@
+<div class="container-fluid pt-4 px-4">
+    <div class="row vh-100 bg-secondary rounded align-items-center justify-content-center mx-0">
+        <div class="col-md-6 text-center">
+            <h3>Lab 10</h3>
+            <form id="main_form" style="display:inline-grid; text-align: left;">
+                <label for="number_x">Enter Number a : </label>
+                <input type="text" id="number_x" placeholder="Number x">
+                <label for="number_y">Enter Number b : </label>
+                <input type="text" id="number_y" placeholder="Number y">
+                <label for="number_z">Enter Number c : </label>
+                <input type="text" id="number_z" placeholder="Number z">
+                <button type="button" style="margin-top: 20px;" id="btnCalc">Calculate</button>
+
+                <p style="color:green" id="results"></p>
+            </form>
+
+            <script>
+                //Number 28
+                var mainForm = document.getElementById("main_form");
+                var btnCalc = document.getElementById("btnCalc");
+                var results = document.getElementById("results");
+
+                btnCalc.addEventListener("click", function () {
+                    let x = parseInt(number_x.value);
+                    let y = parseInt(number_y.value);
+                    let sum = 0;
+                    let i = 0;
+                    let cur = 0;
+                    const to4nost = 0.001;
+
+                    do {
+                        i++;
+                        let factorial = 1;
+                        for (let j = 1; j <= i; j++) {
+                            factorial *= j;
+                        }
+                        cur = (2 * x * i * i + i / y) / (factorial * factorial);
+                        sum += cur;
+                    } while (cur > to4nost);
+
+                    number_z.value = sum;
+
+                    results.innerText = sum;
+
+                });
+            </script>
+        </div>
+    </div>
+</div>

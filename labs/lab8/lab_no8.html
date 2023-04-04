@@ -1,0 +1,27 @@
+<div class="container-fluid pt-4 px-4">
+    <div class="row vh-100 bg-secondary rounded align-items-center justify-content-center mx-0">
+        <div class="col-md-6 text-center">
+            <h3>Lab 8</h3>
+
+            <form>
+                <label for="name-input">Enter your name:</label>
+                <br>
+                <input id="name-input" type="text" onchange="handleNameChange()" onclick="handleNameClick()">
+            </form>
+            <div style="place-content:center;color:#ff0000;display: flex;"  id="message-output"></div>
+
+            <script>
+                function handleNameChange() {
+                    const name = document.getElementById("name-input").value;
+                    const message = `Hello, <p style="color:green;margin:0 10px 0 10px">${name}! </p> Your name has been changed.`;
+                    document.getElementById("message-output").innerHTML = message;
+                }
+
+                function handleNameClick() {
+                    const message = "Please enter your name in the input field above.";
+                    document.getElementById("message-output").textContent = message;
+                }
+            </script>
+        </div>
+    </div>
+</div>

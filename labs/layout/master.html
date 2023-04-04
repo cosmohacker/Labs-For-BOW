@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="TestApp">
+
+<head>
+    <meta charset="utf-8">
+    <title>Laboratory Works - Yagizcan Yavuz - KH221ia.e</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <link href="/img/cosmohacker.ico" rel="icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body ng-controller="testCtrl">
+    <div class="container-fluid position-relative d-flex p-0">
+        <!-- Spinner Start -->
+        <div id="spinner"
+            class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Sidebar Start -->
+        <div class="sidebar pe-4 pb-3" style="overflow-x: hidden;">
+            <nav class="navbar bg-secondary navbar-dark">
+                <a href="#" onclick="changePage('/labs/index/index.html'); return false;"
+                    class="navbar-brand mx-4 mb-3">
+                    <h3 class="text-primary"><i class="fa fa-microchip me-2"></i>Laboratory</h3>
+                </a>
+                <div class="d-flex align-items-center ms-4 mb-4">
+                    <div class="position-relative">
+                        <img class="rounded-circle" src="/img/cosmohacker.png" alt=""
+                            style="width: 40px; height: 40px;">
+                        <div
+                            class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1">
+                        </div>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="mb-0">Ягизджан Явуз</h6>
+                        <span>KH-221ia.e</span>
+                    </div>
+                </div>
+                <div class="navbar-nav w-100">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
+                                class="fa fa-folder  me-2"></i>Lab 1</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="#" onclick="changePage('/labs/lab1/page1.html'); return false;"
+                                class="nav-item nav-link">Page 1</a>
+                            <a href="#" onclick="changePage('/labs/lab1/page2.html'); return false;"
+                                class="nav-item nav-link">Page 2</a>
+                            <a href="#" onclick="changePage('/labs/lab1/page3.html'); return false;"
+                                class="nav-item nav-link">Page 3</a>
+                        </div>
+                    </div>
+
+                    <a id="lab_no2" href="#" onclick="changePage('/labs/lab2/lab_no2.html'); return false;"
+                        class="nav-item nav-link"><i class="fa fa-folder me-2"></i>Lab 2</a>
+                    <a id="lab_no3" href="#" onclick="changePage('/labs/lab3/lab_no3.html'); return false;"
+                        class="nav-item nav-link"><i class="fa fa-folder me-2"></i>Lab 3</a>
+                    <a id="lab_no4" href="#" onclick="changePage('/labs/lab4/lab_no4.html'); return false;"
+                        class="nav-item nav-link"><i class="fa fa-folder me-2"></i>Lab4</a>
+                    <a id="lab_no5" href="#" onclick="changePage('/labs/lab5/lab_no5.html'); return false;"
+                        class="nav-item nav-link"><i class="fa fa-folder me-2"></i>Lab 5</a>
+                    <a id="lab_no6" href="#" onclick="changePage('/labs/lab6/lab_no6.html'); return false;"
+                        class="nav-item nav-link"><i class="fa fa-folder me-2"></i>Lab 6</a>
+                    <a id="lab_no7" href="#" onclick="changePage('/labs/lab7/lab_no7.html'); return false;"
+                        class="nav-item nav-link"><i class="fa fa-folder me-2"></i>Lab 7</a>
+                    <a id="lab_no8" href="#" onclick="changePage('/labs/lab8/lab_no8.html'); return false;"
+                        class="nav-item nav-link"><i class="fa fa-folder me-2"></i>Lab 8</a>
+                    <a id="lab_no9" href="#" onclick="changePage('/labs/lab9/lab_no9.html'); return false;"
+                        class="nav-item nav-link"><i class="fa fa-folder me-2"></i>Lab 9</a>
+                    <a id="lab_no10" href="#" onclick="changePage('/labs/lab10/lab_no10.html'); return false;"
+                        class="nav-item nav-link"><i class="fa fa-folder me-2"></i>Lab 10</a>
+                    <a id="lab_no11" href="#" onclick="changePage('/labs/lab11/lab_no11.html'); return false;"
+                        class="nav-item nav-link"><i class="fa fa-folder me-2"></i>Lab 11</a>
+                    <a id="lab_no12" href="#" onclick="changePage('/labs/lab12/lab_no12.html'); return false;"
+                        class="nav-item nav-link"><i class="fa fa-folder me-2"></i>Lab 12</a>
+                </div>
+            </nav>
+        </div>
+        <!-- Sidebar End -->
+
+        <div class="content">
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
+                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+                    <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
+                </a>
+                <a href="#" class="sidebar-toggler flex-shrink-0">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <div class="navbar-nav align-items-center ms-auto">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <img class="rounded-circle me-lg-2" src="/img/cosmohacker.png" alt=""
+                                style="width: 40px; height: 40px;">
+                            <span class="d-none d-lg-inline-flex">Yagizcan Yavuz</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                            <a href="https://yagizcanyevgenyavuz.space/en" class="dropdown-item">Portfolio</a>
+                            <a href="https://github.com/cosmohacker" class="dropdown-item">Github</a>
+                            <a href="https://twitter.com/cosmohacker" class="dropdown-item">Twitter</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Navbar End -->
+            <div id="content_for_change">
+            </div>
+
+
+            <!-- Footer Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="bg-secondary rounded-top p-4">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 text-center text-sm-start">
+                            &copy; <a href="https://yagizcanyevgenyavuz.space/en">My Portfolio</a>, All Right Reserved.
+                        </div>
+                        <div class="col-12 col-sm-6 text-center text-sm-end">
+                            Designed By <a href="https://yagizcanyevgenyavuz.space/en">Yagizcan Yavuz</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer End -->
+        </div>
+        <!-- Content End -->
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/change_page.js"></script>
+</body>
+
+</html>
